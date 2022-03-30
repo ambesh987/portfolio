@@ -1,49 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { AppWrap } from "../../wrapper";
 
 import { images } from "../../constants";
 import "./About.scss";
-import { urlFor, client } from "../../client";
 
-// const abouts = [
-//   {
-//     title: "Full Stack Web Development",
-//     description: "I am a good full stack web developer",
-//     imgUrl: images.about01,
-//   },
-//   {
-//     title: "Frontend Web Developer",
-//     description: "I am a good frontend web developer",
-//     imgUrl: images.about02,
-//   },
-//   {
-//     title: "Backend Web Development",
-//     description: "I am a good web developer",
-//     imgUrl: images.about03,
-//   },
-//   {
-//     title: "Web Design",
-//     description: "I am a good web developer",
-//     imgUrl: images.about04,
-//   },
-//   {
-//     title: "UX/UI",
-//     description: "I am a good UX/UI Designer",
-//     imgUrl: images.about04,
-//   },
-// ];
+const abouts = [
+  {
+    title: "Full Stack Web Development",
+    description: "I am a good full stack web developer",
+    imgUrl: images.about01,
+  },
+  {
+    title: "Frontend Web Developer",
+    description: "I am a good frontend web developer",
+    imgUrl: images.about02,
+  },
+  {
+    title: "Backend Web Development",
+    description: "I am a good web developer",
+    imgUrl: images.about03,
+  },
+  {
+    title: "Web Design",
+    description: "I am a good web developer",
+    imgUrl: images.about04,
+  },
+  {
+    title: "UX/UI",
+    description: "I am a good UX/UI Designer",
+    imgUrl: images.about04,
+  },
+];
 
 const About = () => {
-  const [abouts, setAbouts] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "abouts"]';
-
-    // client.fetch(query).then((data) => {
-    //   setAbouts(data);
-    // });
-  }, []);
-
   return (
     <>
       <h2 className="head-text">
@@ -75,4 +65,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, "about");
